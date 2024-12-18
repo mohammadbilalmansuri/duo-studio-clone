@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duo Studio</title>
+
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+  </head>
+
+  <body
+    class="w-screen h-screen overflow-hidden relative bg-gray-950 text-gray-200"
+  >
+    <div
+      id="cursor"
+      class="size-4 rounded-full fixed z-50 bg-pink-300 mix-blend-difference pointer-events-none opacity-0"
+    ></div>
+
+    <header
+      class="w-full fixed top-0 left-0 z-40 backdrop-blur-3xl mix-blend-difference"
+    >
+      <div class="w-full flex items-center justify-between py-3 px-10">
+        <a href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            id="Group_5492"
+            data-name="Group 5492"
+            width="40"
+            height="28"
+            viewBox="0 0 51.57 34.6"
+          >
+            <defs>
+              <clipPath id="clip-path">
+                <rect
+                  id="Rectangle_22124"
+                  data-name="Rectangle 22124"
+                  width="51.57"
+                  height="34.6"
+                  fill="#fbf4fd"
+                />
+              </clipPath>
+            </defs>
+            <g
+              id="Group_5491"
+              data-name="Group 5491"
+              clip-path="url(#clip-path)"
+            >
+              <path
+                id="Path_47690"
+                data-name="Path 47690"
+                d="M0,1.534H6.537c4.755,0,5.959,2.258,5.959,5.909V29.262c0,3.749-1.155,5.91-5.863,5.91H0ZM6.441,30.941c1.2,0,1.586-.574,1.586-1.633V7.492c0-1.153-.432-1.68-1.637-1.68H4.469V30.941Z"
+                transform="translate(0 -1.053)"
+                fill="#fbf4fd"
+              />
+              <path
+                id="Path_47691"
+                data-name="Path 47691"
+                d="M67.353,29.646c0,1.248.482,2.018,1.774,2.018s1.735-.77,1.735-2.018V1.534h4.469V29.693c0,3.365-1.541,5.96-6.2,5.96-4.851,0-6.245-2.5-6.245-5.96V1.534h4.471Z"
+                transform="translate(-43.174 -1.053)"
+                fill="#fbf4fd"
+              />
+              <path
+                id="Path_47692"
+                data-name="Path 47692"
+                d="M124.839,28.593V6.054c0-3.462,1.392-6.054,6.248-6.054s6.2,2.593,6.2,6.054V28.593c0,3.46-1.343,6.007-6.2,6.007s-6.248-2.547-6.248-6.007m7.978-.048V6.054c0-1.153-.434-2.018-1.73-2.018s-1.781.865-1.781,2.018V28.545c0,1.248.484,2.065,1.781,2.065s1.73-.818,1.73-2.065"
+                transform="translate(-85.714)"
+                fill="#fbf4fd"
+              />
+            </g>
+          </svg>
+        </a>
+
+        <nav class="flex gap-10">
+          <a
+            href="index.html"
+            class="uppercase text-sm font-medium text-gray-200 left-0 leading-none border-b hover:border-b"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="uppercase text-sm text-gray-200 font-medium left-0 leading-none hover:border-b"
+            >Work</a
+          >
+          <a
+            href="#"
+            class="uppercase text-sm text-gray-200 font-medium left-0 leading-none hover:border-b"
+            >Studio</a
+          >
+          <a
+            href="#"
+            class="uppercase text-sm text-gray-200 font-medium left-0 leading-none hover:border-b"
+            >Contact</a
+          >
+        </nav>
+
+        <div
+          class="magnetic size-4 rounded-full bg-gray-200 cursor-pointer"
+        ></div>
+      </div>
+    </header>
+
+    <main class="relative w-full overflow-hidden">
+      <section id="section1" class="w-full relative flex flex-col items-center">
+        <div class="w-[90%] flex flex-col items-center gap-28 pt-48">
+          <h1 class="text-8xl leading-tight w-3/4">
+            <span class="block origin-left">Digitally crafted</span>
+            <span class="block text-right origin-right">brand experiences</span>
+          </h1>
+
+          <video
+            class="scale-75"
+            autoplay
+            muted
+            loop
+            src="https://res.cloudinary.com/samaxy50/video/upload/v1734501885/duo-studio-banner-video.mp4"
+          ></video>
+        </div>
+      </section>
+
+      <section
+        id="section2"
+        class="w-full relative border-b-2 border-b-gray-500 flex flex-col items-center"
+      >
+        <div class="w-[90%] flex flex-col gap-16 py-28">
+          <h2 class="text-7xl font-medium leading-tight">We are Duo Studio,</h2>
+          <div class="flex justify-between items-center">
+            <div class="w-2/5 -mb-2">
+              <h3 class="text-5xl uppercase leading-tight">
+                A Creative Collective Made To Unlock Your Brand's Potential
+              </h3>
+            </div>
+            <div class="w-1/3 flex flex-col gap-5">
+              <p>
+                We weave together bold strategy and creative execution to
+                produce thought-provoking digital experiences. We take a highly
+                personalized approach to delivering branding, web design, and
+                content marketing solutions. Born in the DC area - now serving
+                clients worldwide.
+              </p>
+              <button
+                class="pt-1 pb-0.5 text-sm uppercase bg-pink-300 rounded-full hover:bg-gray-950 hover:text-gray-200"
+              >
+                About Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section3"
+        class="w-full relative border-b-2 border-b-gray-500 flex flex-col items-center"
+      >
+        <div class="w-full flex flex-col items-center gap-16 py-28">
+          <h2 class="w-[90%] text-7xl font-medium leading-tight">
+            Selected Works
+          </h2>
+
+          <div class="work w-full flex flex-col">
+            <div class="w-full flex flex-col">
+              <div class="w-[45%]">
+                <img
+                  class="w-full"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734501876/sec3-left.webp"
+                  alt="Section 3 Left Image"
+                />
+                <div class="info flex justify-end gap-3 mt-2">
+                  <h5 class="text-lg font-bold">MGNY</h5>
+                  <p>Strategy, Website, Illustration</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="work w-full flex flex-col items-end">
+              <div class="w-1/3 -mt-64">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  src="https://res.cloudinary.com/samaxy50/video/upload/v1734501886/projects-madegood-reduced.mp4"
+                ></video>
+                <div class="info flex gap-3 mt-2">
+                  <h5 class="text-lg font-bold">MadeGood</h5>
+                  <p>Strategy, Website</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="work w-full flex flex-col">
+              <div class="w-[40%] ml-48 mt-16">
+                <img
+                  class="w-full"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734501876/sec3-left.webp"
+                  alt="Section 3 Left Image"
+                />
+                <div class="info flex justify-end gap-3 mt-2">
+                  <h5 class="text-lg font-bold">MGNY</h5>
+                  <p>Strategy, Website, Illustration</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta w-[90%] flex justify-between items-center">
+            <h3 class="text-6xl leading-tight">See All Projects</h3>
+            <button
+              class="magnetic size-32 rounded-full uppercase font-bold text-sm leading-none border-2 bg-transparent border-gray-950 hover:bg-pink-300 hover:border-pink-300 flex justify-center items-center"
+            >
+              Projects
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="section4"
+        class="w-full relative flex flex-col items-center border-b-2 border-b-gray-500"
+      >
+        <div class="w-[80%] py-40 flex flex-col gap-10 items-center">
+          <h4 class="uppercase text-sm leading-normal text-center">
+            Designed To Bring Out<br />The Truth Of Your Brand
+          </h4>
+
+          <div class="w-full relative grid grid-cols-3 gap-20 items-center">
+            <div
+              class="left-images col-span-1 relative flex justify-center items-start"
+            >
+              <img
+                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6"
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/sec4-1.webp"
+                alt="Img Left"
+              />
+              <img
+                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6"
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/sec4-2.webp"
+                alt="Img Left"
+              />
+              <img
+                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6"
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/sec4-1.webp"
+                alt="Img Left"
+              />
+            </div>
+
+            <div
+              class="titles w-full col-span-1 flex flex-col items-center gap-5 text-center"
+            >
+              <h2 id="t-1" class="group h-20 overflow-hidden cursor-pointer">
+                <span
+                  class="group-hover:-translate-y-full group-hover:text-pink-300 group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block text-[5rem] leading-none"
+                  >Strategy</span
+                >
+                <span
+                  class="group-hover:-translate-y-full group-hover:text-pink-300 group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block text-[5rem] leading-none"
+                  >Strategy</span
+                >
+              </h2>
+              <h2 id="t-2" class="group h-20 overflow-hidden cursor-pointer">
+                <span
+                  class="group-hover:-translate-y-full group-hover:text-pink-300 group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block text-[5rem] leading-none"
+                  >Identity</span
+                >
+                <span
+                  class="group-hover:-translate-y-full group-hover:text-pink-300 group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block text-[5rem] leading-none"
+                  >Identity</span
+                >
+              </h2>
+              <h2 id="t-3" class="group h-20 overflow-hidden cursor-pointer">
+                <span
+                  class="group-hover:-translate-y-full group-hover:text-pink-300 group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block text-[5rem] leading-none"
+                  >Experience</span
+                >
+                <span
+                  class="group-hover:-translate-y-full group-hover:text-pink-300 group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block text-[5rem] leading-none"
+                  >Experience</span
+                >
+              </h2>
+            </div>
+
+            <div
+              class="right-images col-span-1 relative flex justify-center items-end"
+            >
+              <img
+                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6"
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/sec4-2.webp"
+                alt="Img Right"
+              />
+              <img
+                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6"
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/sec4-1.webp"
+                alt="Img Right"
+              />
+              <img
+                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6"
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/sec4-2.webp"
+                alt="Img Right"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section5" class="w-full relative flex flex-col items-center">
+        <div class="w-[90%] pt-24 pb-28 relative flex flex-col gap-5">
+          <div class="flex justify-between items-center">
+            <h2 class="text-5xl font-medium uppercase leading-tight">
+              <span class="text-pink-300">Mentions</span> Clients
+            </h2>
+            <button class="magnetic text-sm uppercase hover:text-pink-300">
+              View Clients
+            </button>
+          </div>
+
+          <div class="clients flex flex-col">
+            <div
+              class="group text-gray-500 flex justify-between items-center py-5 cursor-pointer hover:text-gray-200 transition-all duration-200"
+              data-image="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/client1.webp"
+            >
+              <h4 class="text-lg font-medium">Verizon</h4>
+              <p class="flex justify-end items-center gap-24">
+                <span>Small Business Feature</span>
+                <span>2021</span>
+              </p>
+            </div>
+
+            <div
+              class="group text-gray-500 flex justify-between items-center py-5 cursor-pointer hover:text-gray-200 transition-all duration-200"
+              data-image="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/client2.webp"
+            >
+              <h4 class="text-lg font-medium">Awwwards</h4>
+              <p class="flex justify-end items-center gap-24">
+                <span>Mobile Excellence</span>
+                <span>2021</span>
+              </p>
+            </div>
+            <div
+              class="group text-gray-500 flex justify-between items-center py-5 cursor-pointer hover:text-gray-200 transition-all duration-200"
+              data-image="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/client1.webp"
+            >
+              <h4 class="text-lg font-medium">Verizon</h4>
+              <p class="flex justify-end items-center gap-24">
+                <span>Small Business Feature</span>
+                <span>2021</span>
+              </p>
+            </div>
+            <div
+              class="group text-gray-500 flex justify-between items-center py-5 cursor-pointer hover:text-gray-200 transition-all duration-200"
+              data-image="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/client2.webp"
+            >
+              <h4 class="text-lg font-medium">Awwwards</h4>
+              <p class="flex justify-end items-center gap-24">
+                <span>Mobile Excellence</span>
+                <span>2021</span>
+              </p>
+            </div>
+            <div
+              class="group text-gray-500 flex justify-between items-center py-5 cursor-pointer hover:text-gray-200 transition-all duration-200"
+              data-image="https://res.cloudinary.com/samaxy50/image/upload/v1734501875/client1.webp"
+            >
+              <h4 class="text-lg font-medium">Verizon</h4>
+              <p class="flex justify-end items-center gap-24">
+                <span>Small Business Feature</span>
+                <span>2021</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="w-full z-10 flex flex-col items-center bg-pink-300 text-gray-950"
+      >
+        <div class="w-[90%] pb-5">
+          <div class="cta flex justify-between items-center py-36">
+            <h2 class="text-8xl leading-tight">Start a project</h2>
+            <button
+              class="magnetic size-36 rounded-full uppercase font-bold text-sm leading-none border-2 bg-transparent border-gray-950 hover:bg-gray-950 hover:text-gray-200 flex justify-center items-center"
+            >
+              Get In Touch
+            </button>
+          </div>
+
+          <p class="footer-mid-text text-xl">
+            Create an experience that's as remarkable as your business.
+          </p>
+
+          <div class="footer-bottom mt-12 flex justify-between text-sm">
+            <div class="flex gap-10">
+              <div class="flex flex-col gap-1">
+                <p class="uppercase text-xs font-semibold">Main Hubs</p>
+                <p>DC, Maryland, Virginia</p>
+              </div>
+              <div class="flex flex-col gap-1">
+                <p class="uppercase text-xs font-semibold">General Inquiries</p>
+                <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+              </div>
+              <div class="flex flex-col gap-1">
+                <p class="uppercase text-xs font-semibold">Follow Us</p>
+                <p><a href="#">Instagram</a>, <a href="#">LinkedIn</a></p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <p>@2023 Duo Studio</p>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

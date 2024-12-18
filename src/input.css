@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: PP Mori;
+    src: url(../dist/ppmori.ttf);
+  }
+
+  * {
+    font-family: "PP Mori", sans-serif;
+  }
+
+  .clients div:nth-child(odd) {
+    border-top: 1px solid #6b7280;
+    border-bottom: 1px solid #6b7280;
+  }
+}
