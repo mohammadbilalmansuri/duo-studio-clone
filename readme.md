@@ -1,4 +1,4 @@
-# Duo Studio Home Page Clone
+# Duo Studio Clone
 
 This is a replica of the Duo Studio website home page, created to practice and showcase skills in HTML, Tailwind CSS, JavaScript, and animation libraries. The project features micro-interactions, various animations, and scroll-based animations using GSAP with its plugins ScrollTrigger and MotionPath. Smooth scrolling is implemented using Locomotive Scroll.
 
