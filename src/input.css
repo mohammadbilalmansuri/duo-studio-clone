@@ -1,19 +1,54 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   @font-face {
     font-family: PP Mori;
-    src: url(../dist/ppmori.ttf);
+    src: url(../assets/ppmori.ttf);
   }
 
   * {
+    box-sizing: border-box;
     font-family: "PP Mori", sans-serif;
   }
 
-  .clients div:nth-child(odd) {
-    border-top: 1px solid #6b7280;
-    border-bottom: 1px solid #6b7280;
+  :root {
+    --white: #e5e7eb;
+    --black: #030712;
+    --gray: #6b7280;
+    --pink: #f9a8d4;
   }
 }
+
+@tailwind components;
+
+@layer components {
+  .layout {
+    @apply w-full max-w-[1920px] xl:px-20 md:px-10 px-5;
+  }
+
+  .h1 {
+    @apply 3xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl text-4xl leading-tight;
+  }
+
+  .h2 {
+    @apply 3xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium leading-tight;
+  }
+
+  .h3 {
+    @apply 3xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl font-medium uppercase leading-tight;
+  }
+
+  .magnetic-btn {
+    @apply 2xl:size-36 xl:size-32 lg:size-28 lg:px-0 lg:py-0 px-10 py-5 rounded-full uppercase font-bold text-sm leading-none border-2 bg-transparent flex justify-center items-center;
+  }
+
+  .client {
+    @apply text-gray flex justify-between items-center py-7 cursor-pointer hover:text-white transition-all duration-200;
+  }
+
+  .client:nth-child(odd) {
+    @apply border-y border-y-gray;
+  }
+}
+
+@tailwind utilities;
