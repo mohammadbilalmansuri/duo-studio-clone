@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Prevent the browser from restoring the scroll position
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  // Scroll to the top before unloading the page
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+    ScrollTrigger.refresh();
+  };
+
+  // GSAP with scrolltrigger & lenis
   gsap.registerPlugin(ScrollTrigger);
   const lenis = new Lenis();
 
@@ -9,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
 
+  // Cursor animation
   let cursor;
-
   const initializeCursor = () => {
     if (window.innerWidth > 1280) {
       cursor = document.querySelector("#cursor");
@@ -39,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Background color change on scroll
   const changeBackgroundColor = (toWhite) => {
     document.body.classList.toggle("bg-white", toWhite);
     document.body.classList.toggle("bg-black", !toWhite);
@@ -60,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
       end: calculateTriggerPoint(),
       scroller: "body",
       scrub: true,
-      markers: true,
       toggleActions: "play none none reverse",
       onEnter: () => changeBackgroundColor(true),
       onLeaveBack: () => changeBackgroundColor(false),
@@ -78,49 +89,102 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Animations
+  // Sections animations
   const animateSections = () => {
-    const animations = [
-      {
-        trigger: "#section1",
-        targets: "#section1 h1, #section1 video",
-        options: { y: 100, duration: 0.75, stagger: 0.25 },
-      },
-      {
-        trigger: "#section2",
-        targets: "#section2 h2, #section2 h3, #section2 p, #section2 button",
-        options: { y: 100, opacity: 0, duration: 0.75, stagger: 0.25 },
-      },
-      {
-        trigger: "#section3",
-        targets: "#section3 h2, #section3 .work, #section3 .cta",
-        options: { y: 100, opacity: 0, duration: 0.75, stagger: 0.75 },
-      },
-      {
-        trigger: "#section4",
-        targets: "#section4 h4, #section4 h2",
-        options: { y: 100, opacity: 0, duration: 0.75, stagger: 0.3 },
-      },
-      {
-        trigger: "#section5",
-        targets: "#section5 h2, #section5 button, #section5 .clients",
-        options: { y: 100, opacity: 0, duration: 0.75, stagger: 0.3 },
-      },
-    ];
+    // Section 1
+    gsap.from("#section1 h1", {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+    });
 
-    animations.forEach(({ trigger, targets, options }) => {
-      gsap.from(targets, {
-        ...options,
-        scrollTrigger: {
-          trigger: trigger,
-          scroller: "body",
-          start: "top 75%",
-          end: "top 75%",
-        },
-      });
+    gsap.from("#section1 video", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+    });
+
+    gsap.to("#section1 h1", {
+      scale: 0.5,
+      opacity: 50,
+      scrollTrigger: {
+        trigger: "#section1",
+        scroller: "body",
+        start: "top top",
+        end: "top -25%",
+        scrub: 1,
+      },
+    });
+
+    gsap.to("#section1 video", {
+      scale: 1,
+      scrollTrigger: {
+        trigger: "#section1",
+        scroller: "body",
+        start: "top top",
+        end: "top -40%",
+        scrub: 1,
+      },
+    });
+
+    // Section 2
+    gsap.from("#section2 h2, #section2 h3, #section2 p, #section2 button", {
+      y: 100,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.25,
+      scrollTrigger: {
+        trigger: "#section2",
+        scroller: "body",
+        start: "top 75%",
+        end: "top 75%",
+      },
+    });
+
+    // Section 3
+    gsap.from("#section3 h2, #section3 .work, #section3 .cta", {
+      y: 100,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.75,
+      scrollTrigger: {
+        trigger: "#section3",
+        scroller: "body",
+        start: "top 75%",
+        end: "top 75%",
+      },
+    });
+
+    // Section 4
+    gsap.from("#section4 h4, #section4 h2", {
+      y: 100,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#section4",
+        scroller: "body",
+        start: "top 75%",
+        end: "top 75%",
+      },
+    });
+
+    // Section 5
+    gsap.from("#section5 h2, #section5 button, .clients", {
+      y: 100,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#section5",
+        scroller: "body",
+        start: "top 75%",
+        end: "top 75%",
+      },
     });
   };
 
+  // Magnet effect
   const magnetize = (
     element,
     maxDistance = 100,
