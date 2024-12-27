@@ -16,10 +16,10 @@
   <body class="w-full relative overflow-x-hidden bg-black text-white">
     <div
       id="cursor"
-      class="size-4 rounded-full fixed z-50 bg-pink mix-blend-difference pointer-events-none opacity-0"
+      class="xl:block hidden size-4 rounded-full fixed z-50 bg-pink mix-blend-difference pointer-events-none opacity-0"
     ></div>
 
-    <div class="w-full relative flex flex-col items-center">
+    <div class="w-full relative flex flex-col items-center overflow-x-hidden">
       <header
         class="w-full fixed top-0 left-0 z-40 backdrop-blur-3xl mix-blend-difference flex flex-col items-center"
       >
@@ -48,10 +48,10 @@
             </svg>
           </a>
 
-          <nav class="flex sm:gap-10 gap-5">
+          <nav class="flex sm:gap-10 xs:gap-7 gap-4">
             <a
               href="#"
-              class="xl:text-base text-sm uppercase text-white font-medium leading-none border-b"
+              class="xl:text-base text-sm uppercase text-white font-medium leading-none border-b xs:block hidden"
               >Home</a
             >
             <a
@@ -78,15 +78,17 @@
       </header>
 
       <section id="section1" class="w-full relative flex flex-col items-center">
-        <div class="layout flex flex-col items-center gap-20 pt-48">
-          <h1 class="w-3/5 h1">
-            <span class="block origin-left">Digitally crafted</span>
-            <span class="block text-right origin-right">brand experiences</span>
+        <div
+          class="layout flex flex-col items-center 2xl:pt-48 xl:pt-44 lg:pt-40 pt-36"
+        >
+          <h1 class="leading-snug h1 text-center">
+            Digitally crafted brand experiences
           </h1>
 
           <video
-            class="scale-75"
+            class="w-full h-full sm:scale-75 scale-90 md:rounded-3xl sm:rounded-2xl rounded-xl"
             autoplay
+            oncontextmenu="return false;"
             muted
             loop
             src="./assets/ds-banner-video.mp4"
@@ -94,82 +96,79 @@
         </div>
       </section>
 
-      <section
-        id="section2"
-        class="w-full relative border-b-2 border-b-gray flex flex-col items-center"
-      >
-        <div class="layout flex flex-col gap-14 py-28">
-          <h2 class="h2">We are Duo Studio,</h2>
-          <div class="flex justify-between items-center">
-            <div class="w-2/5">
-              <h3 class="h3">
-                A Creative Collective Made To Unlock Your Brand's Potential
-              </h3>
-            </div>
-            <div class="w-1/3 flex flex-col gap-5">
-              <p class="text-lg">
-                We weave together bold strategy and creative execution to
-                produce thought-provoking digital experiences. We take a highly
-                personalized approach to delivering branding, web design, and
-                content marketing solutions. Born in the DC area - now serving
-                clients worldwide.
-              </p>
-              <button
-                class="py-1 px-2 text uppercase bg-pink rounded-full text-black hover:bg-black hover:text-white"
-              >
-                About Us
-              </button>
-            </div>
-          </div>
+      <section id="section2" class="w-full relative flex flex-col items-center">
+        <div
+          class="layout flex flex-col items-center gap-5 text-center rounded-3xl xl:py-28 py-20"
+        >
+          <h2 class="h2">We are <span class="text-pink">Duo</span> Studio</h2>
+          <h3 class="leading-snug md:text-xl text-lg">
+            A Creative Collective Made To Unlock Your Brand's Potential
+          </h3>
+          <p
+            class="2xl:max-w-[60%] xl:max-xl:w-2/3 lg:w-3/4 md:max-w-[85%] w-full text-gray md:text-lg"
+          >
+            We weave together bold strategy and creative execution to produce
+            thought-provoking digital experiences. We take a highly personalized
+            approach to delivering branding, web design, and content marketing
+            solutions. Born in the DC area - now serving clients worldwide.
+          </p>
+          <button
+            class="mt-3 btn border-2 border-pink bg-transparent rounded-full text-pink hover:bg-pink hover:text-black"
+          >
+            About Us
+          </button>
         </div>
       </section>
 
       <section
         id="section3"
-        class="w-full relative border-b-2 border-b-gray flex flex-col items-center"
+        class="w-full relative border-y-2 border-b-gray flex flex-col items-center"
       >
-        <div class="layout flex flex-col items-center gap-14 py-28">
+        <div
+          class="layout flex flex-col items-center xl:gap-14 gap-10 xl:py-28 py-20"
+        >
           <h2 class="w-full h2">Selected Works</h2>
 
-          <div class="w-full flex flex-col">
+          <div class="w-full flex flex-col md:gap-0 gap-10">
             <div class="work w-full flex flex-col">
-              <div class="w-[45%]">
+              <div class="md:w-[45%] w-full">
                 <img
-                  class="w-full"
+                  class="w-full rounded-xl"
                   src="./assets/ds-sec3-left.webp"
                   alt="Section 3 Left Image"
                 />
-                <div class="info flex justify-end gap-3 mt-2">
-                  <h5 class="text-lg font-bold">MGNY</h5>
+                <div class="info flex justify-end gap-2 mt-2">
+                  <h5 class="xl:text-lg text-base font-bold">MGNY</h5>
                   <p>Strategy, Website, Illustration</p>
                 </div>
               </div>
             </div>
 
             <div class="work w-full flex flex-col items-end">
-              <div class="w-1/3 -mt-48">
+              <div class="md:w-[35%] md:-mt-48 w-full">
                 <video
+                  class="rounded-xl w-full"
                   autoplay
                   muted
                   loop
                   src="./assets/ds-projects-madegood-reduced.mp4"
                 ></video>
-                <div class="info flex gap-3 mt-2">
-                  <h5 class="text-lg font-bold">MadeGood</h5>
+                <div class="info flex gap-2 mt-2">
+                  <h5 class="xl:text-lg text-base font-bold">MadeGood</h5>
                   <p>Strategy, Website</p>
                 </div>
               </div>
             </div>
 
             <div class="work w-full flex flex-col">
-              <div class="w-[40%] ml-48 mt-14">
+              <div class="md:w-[40%] md:ml-48 md:mt-14 w-full">
                 <img
-                  class="w-full"
+                  class="w-full rounded-xl"
                   src="./assets/ds-sec3-left.webp"
                   alt="Section 3 Left Image"
                 />
-                <div class="info flex justify-end gap-3 mt-2">
-                  <h5 class="text-lg font-bold">MGNY</h5>
+                <div class="info flex justify-end gap-2 mt-2">
+                  <h5 class="xl:text-lg text-base font-bold">MGNY</h5>
                   <p>Strategy, Website, Illustration</p>
                 </div>
               </div>
@@ -179,7 +178,7 @@
           <div class="cta w-full flex justify-between items-center">
             <h3 class="h3">See All Projects</h3>
             <button
-              class="magnetic magnetic-btn border-black hover:bg-pink hover:border-pink"
+              class="magnetic btn border-2 bg-transparent border-pink text-pink hover:bg-pink hover:text-black"
             >
               Projects
             </button>
@@ -191,132 +190,158 @@
         id="section4"
         class="w-full relative flex flex-col items-center border-b-2 border-b-gray"
       >
-        <div class="w-[80%] py-40 flex flex-col gap-14 items-center">
-          <h4 class="uppercase text-sm leading-normal text-center">
-            Designed To Bring Out<br />The Truth Of Your Brand
-          </h4>
+        <div
+          class="layout xl:py-28 py-20 grid sm:grid-cols-3 grid-cols-1 xl:gap-14 gap-10"
+        >
+          <div
+            class="left-images col-span-1 relative sm:flex justify-end items-center hidden"
+          >
+            <img
+              class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6 rounded-xl"
+              src="./assets/ds-sec4-1.webp"
+              alt="Img Left"
+            />
+            <img
+              class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6 rounded-xl"
+              src="./assets/ds-sec4-2.webp"
+              alt="Img Left"
+            />
+            <img
+              class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6 rounded-xl"
+              src="./assets/ds-sec4-1.webp"
+              alt="Img Left"
+            />
+          </div>
 
-          <div class="w-full relative grid grid-cols-3 gap-28 items-center">
-            <div
-              class="left-images col-span-1 relative flex justify-center items-start"
-            >
-              <img
-                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6"
-                src="./assets/ds-sec4-1.webp"
-                alt="Img Left"
-              />
-              <img
-                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6"
-                src="./assets/ds-sec4-2.webp"
-                alt="Img Left"
-              />
-              <img
-                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6"
-                src="./assets/ds-sec4-1.webp"
-                alt="Img Left"
-              />
-            </div>
+          <div
+            class="titles w-full col-span-1 flex flex-col items-center xl:gap-14 gap-10 text-center"
+          >
+            <h4 class="text-lg font-medium text-center w-52">
+              Designed To Bring Out The Truth Of Your Brand
+            </h4>
 
-            <div
-              class="titles w-full col-span-1 flex flex-col items-center gap-7 text-center"
+            <h2
+              class="group 2xl:h-16 xl:h-12 md:h-10 h-9 overflow-hidden cursor-pointer"
             >
-              <h2 id="t-1" class="group h-20 overflow-hidden cursor-pointer">
-                <span
-                  class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block h2"
-                  >Strategy</span
-                >
-                <span
-                  class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block h2"
-                  >Strategy</span
-                >
-              </h2>
-              <h2 id="t-2" class="group h-20 overflow-hidden cursor-pointer">
-                <span
-                  class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block h2"
-                  >Identity</span
-                >
-                <span
-                  class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block h2"
-                  >Identity</span
-                >
-              </h2>
-              <h2 id="t-3" class="group h-20 overflow-hidden cursor-pointer">
-                <span
-                  class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block h2"
-                  >Experience</span
-                >
-                <span
-                  class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block h2"
-                  >Experience</span
-                >
-              </h2>
-            </div>
+              <span
+                class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block h2 uppercase"
+                >Strategy</span
+              >
+              <span
+                class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block h2 uppercase"
+                >Strategy</span
+              >
+            </h2>
 
-            <div
-              class="right-images col-span-1 relative flex justify-center items-end"
+            <h2
+              class="group 2xl:h-16 xl:h-12 md:h-10 h-9 overflow-hidden cursor-pointer"
             >
-              <img
-                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6"
-                src="./assets/ds-sec4-2.webp"
-                alt="Img Right"
-              />
-              <img
-                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6"
-                src="./assets/ds-sec4-1.webp"
-                alt="Img Right"
-              />
-              <img
-                class="w-[80%] absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6"
-                src="./assets/ds-sec4-2.webp"
-                alt="Img Right"
-              />
-            </div>
+              <span
+                class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block h2 uppercase"
+                >Identity</span
+              >
+              <span
+                class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block h2 uppercase"
+                >Identity</span
+              >
+            </h2>
+
+            <h2
+              class="group 2xl:h-16 xl:h-12 md:h-10 h-9 overflow-hidden cursor-pointer"
+            >
+              <span
+                class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-0 opacity-100 transition-all duration-500 ease-out block h2 uppercase"
+                >Experience</span
+              >
+              <span
+                class="group-hover:-translate-y-full group-hover:text-pink group-hover:opacity-100 opacity-0 transition-all duration-500 ease-out block h2 uppercase"
+                >Experience</span
+              >
+            </h2>
+          </div>
+
+          <div
+            class="right-images col-span-1 relative sm:flex justify-start items-center hidden"
+          >
+            <img
+              class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6 rounded-xl"
+              src="./assets/ds-sec4-2.webp"
+              alt="Img Right"
+            />
+            <img
+              class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6 rounded-xl"
+              src="./assets/ds-sec4-1.webp"
+              alt="Img Right"
+            />
+            <img
+              class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6 rounded-xl"
+              src="./assets/ds-sec4-2.webp"
+              alt="Img Right"
+            />
           </div>
         </div>
       </section>
 
       <section id="section5" class="w-full relative flex flex-col items-center">
-        <div class="layout py-28 relative flex flex-col gap-7">
+        <div
+          class="layout 2xl:py-28 xl:py-24 py-20 relative flex flex-col md:gap-7 gap-5"
+        >
           <div class="flex justify-between items-center">
-            <h2 class="h3"><span class="text-pink">Mentions</span> Clients</h2>
-            <button class="magnetic text-sm uppercase hover:text-pink">
+            <h2
+              class="2xl:text-6xl xl:text-5xl md:text-4xl xs:text-3xl text-2xl"
+            >
+              <span class="text-pink">Mentions</span> Clients
+            </h2>
+            <button
+              class="magnetic xs:text-sm text-xs uppercase hover:text-pink"
+            >
               View Clients
             </button>
           </div>
 
           <div class="clients flex flex-col">
             <div class="group client" data-image="./assets/ds-client1.webp">
-              <h4 class="text-lg font-medium">Verizon</h4>
-              <p class="flex justify-end items-center gap-24">
+              <h4 class="xs:text-lg text-base font-medium">Verizon</h4>
+              <p
+                class="flex justify-end items-center xl:gap-24 md:gap-12 xs:gap-6 gap-3 xs:text-base text-sm"
+              >
                 <span>Small Business Feature</span>
                 <span>2021</span>
               </p>
             </div>
 
             <div class="group client" data-image="./assets/ds-client2.webp">
-              <h4 class="text-lg font-medium">Awwwards</h4>
-              <p class="flex justify-end items-center gap-24">
+              <h4 class="xs:text-lg text-base font-medium">Awwwards</h4>
+              <p
+                class="flex justify-end items-center xl:gap-24 md:gap-12 xs:gap-6 gap-3 xs:text-base text-sm"
+              >
                 <span>Mobile Excellence</span>
                 <span>2021</span>
               </p>
             </div>
             <div class="group client" data-image="./assets/ds-client1.webp">
-              <h4 class="text-lg font-medium">Verizon</h4>
-              <p class="flex justify-end items-center gap-24">
+              <h4 class="xs:text-lg text-base font-medium">Verizon</h4>
+              <p
+                class="flex justify-end items-center xl:gap-24 md:gap-12 xs:gap-6 gap-3 xs:text-base text-sm"
+              >
                 <span>Small Business Feature</span>
                 <span>2021</span>
               </p>
             </div>
             <div class="group client" data-image="./assets/ds-client2.webp">
-              <h4 class="text-lg font-medium">Awwwards</h4>
-              <p class="flex justify-end items-center gap-24">
+              <h4 class="xs:text-lg text-base font-medium">Awwwards</h4>
+              <p
+                class="flex justify-end items-center xl:gap-24 md:gap-12 xs:gap-6 gap-3 xs:text-base text-sm"
+              >
                 <span>Mobile Excellence</span>
                 <span>2021</span>
               </p>
             </div>
             <div class="group client" data-image="./assets/ds-client1.webp">
-              <h4 class="text-lg font-medium">Verizon</h4>
-              <p class="flex justify-end items-center gap-24">
+              <h4 class="xs:text-lg text-base font-medium">Verizon</h4>
+              <p
+                class="flex justify-end items-center xl:gap-24 md:gap-12 xs:gap-6 gap-3 xs:text-base text-sm"
+              >
                 <span>Small Business Feature</span>
                 <span>2021</span>
               </p>
@@ -326,25 +351,27 @@
       </section>
 
       <footer class="w-full flex flex-col items-center bg-pink text-black">
-        <div
-          class="layout 2xl:py-28 lg:py-24 sm:py-20 py-16 flex flex-col 2xl:gap-28 lg:gap-24 sm:gap-20 gap-16"
-        >
-          <div class="cta flex justify-between items-center">
-            <h2 class="h1">Start a project</h2>
+        <div class="layout xl:py-28 py-20 flex flex-col xs:gap-10 gap-5">
+          <div class="cta flex justify-between items-center gap-5">
+            <h2 class="xs:h2 text-2xl">Start a project</h2>
             <button
-              class="magnetic magnetic-btn border-black hover:bg-black hover:text-white"
+              class="magnetic btn border-2 bg-transparent border-black hover:bg-black hover:text-white min-w-fit"
             >
               Get In Touch
             </button>
           </div>
 
-          <div class="flex flex-col gap-7">
-            <p class="footer-mid-text text-xl">
+          <div class="flex flex-col gap-5">
+            <p class="sm:text-xl xs:text-lg text-base">
               Create an experience that's as remarkable as your business.
             </p>
 
-            <div class="footer-bottom flex justify-between text-sm">
-              <div class="flex gap-10">
+            <div
+              class="w-full footer-bottom flex sm:flex-row flex-col justify-between md:gap-10 gap-5 text-sm"
+            >
+              <div
+                class="min-w-fit sm:w-auto w-full sm:justify-normal justify-between flex md:gap-10 gap-4"
+              >
                 <div class="flex flex-col gap-1">
                   <p class="uppercase text-xs font-semibold">Main Hubs</p>
                   <p>DC, Maryland, Virginia</p>
@@ -355,14 +382,16 @@
                   </p>
                   <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
                 </div>
+              </div>
+              <div class="w-full flex justify-between md:gap-10 gap-5">
                 <div class="flex flex-col gap-1">
                   <p class="uppercase text-xs font-semibold">Follow Us</p>
                   <p><a href="#">Instagram</a>, <a href="#">LinkedIn</a></p>
                 </div>
-              </div>
-              <div class="flex flex-col gap-1">
-                <p>@2023 Duo Studio</p>
-                <a href="#">Privacy Policy</a>
+                <div class="flex flex-col items-end gap-1">
+                  <p>@2023 Duo Studio</p>
+                  <a href="#">Privacy Policy</a>
+                </div>
               </div>
             </div>
           </div>
@@ -373,7 +402,6 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
