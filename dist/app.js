@@ -1,30 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const lenis = new Lenis();
+  lenis.on("scroll", ScrollTrigger.update);
+
+  const raf = (time) => {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  };
+  requestAnimationFrame(raf);
+
   // Prevent the browser from restoring the scroll position
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
+
   // Scroll to the top before unloading the page
-  window.onbeforeunload = function () {
+  const scrollTop = () => {
     window.scrollTo(0, 0);
     ScrollTrigger.refresh();
   };
+  window.addEventListener("unload", scrollTop);
 
-  // GSAP with scrolltrigger & lenis
-  gsap.registerPlugin(ScrollTrigger);
-  const lenis = new Lenis();
+  // Cursor setup
+  let cursor = document.querySelector("#cursor");
 
-  lenis.on("scroll", ScrollTrigger.update);
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
+  if (!cursor) {
+    cursor = document.createElement("div");
+    cursor.id = "cursor";
+    cursor.classList.add(
+      "xl:block",
+      "hidden",
+      "size-4",
+      "rounded-full",
+      "fixed",
+      "z-50",
+      "bg-pink",
+      "mix-blend-difference",
+      "pointer-events-none",
+      "opacity-0"
+    );
+    document.body.appendChild(cursor);
   }
-  requestAnimationFrame(raf);
 
-  // Cursor animation
-  let cursor;
-  const initializeCursor = () => {
+  const initializeCursorAnimation = () => {
     if (window.innerWidth > 1280) {
-      cursor = document.querySelector("#cursor");
       gsap.set(cursor, { xPercent: -50, yPercent: -50 });
 
       window.addEventListener("mousemove", (e) => {
@@ -50,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Background color change on scroll
+  // Background color toggle
   const changeBackgroundColor = (toWhite) => {
     document.body.classList.toggle("bg-white", toWhite);
     document.body.classList.toggle("bg-black", !toWhite);
@@ -90,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Sections animations
-  const animateSections = () => {
+  const initializeSectionsAnimations = () => {
     // Section 1
     gsap.from("#section1 h1", {
       opacity: 0,
@@ -192,17 +211,15 @@ document.addEventListener("DOMContentLoaded", () => {
     easing = "power2.out"
   ) => {
     element.addEventListener("mousemove", (e) => {
-      const bounds = element.getBoundingClientRect(); // Get the current bounding rectangle of the element
-      const centerY = bounds.top + bounds.height / 2; // Calculate the center Y coordinate of the element
-      const centerX = bounds.left + bounds.width / 2; // Calculate the center X coordinate of the element
+      const bounds = element.getBoundingClientRect();
+      const centerX = bounds.left + bounds.width / 2;
+      const centerY = bounds.top + bounds.height / 2;
 
-      const deltaX = e.clientX - centerX; // Calculate the cursor's X distance from the center of the element
-      const deltaY = e.clientY - centerY; // Calculate the cursor's Y distance from the center of the element
-      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY); // Calculate the distance from the cursor to the center of the element
+      const deltaX = e.clientX - centerX;
+      const deltaY = e.clientY - centerY;
+      const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
 
       let scale = 1;
-
-      // If the cursor is within the maxDistance, calculate the scale effect
       if (distance < maxDistance) {
         scale = 1 + 0.2 * (1 - distance / maxDistance);
       }
@@ -210,9 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.to(element, {
         x: 0.5 * deltaX,
         y: 0.5 * deltaY,
-        scale: scale,
+        scale,
         ease: easing,
-        duration: duration,
+        duration,
       });
     });
 
@@ -222,11 +239,12 @@ document.addEventListener("DOMContentLoaded", () => {
         y: 0,
         scale: 1,
         ease: "elastic.out(1, 0.3)",
-        duration: duration,
+        duration,
       });
     });
   };
 
+  // Initialize interactive elements
   const initializeInteractiveElements = () => {
     const windowWidth = window.innerWidth;
 
@@ -270,7 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (windowWidth > 1280) {
           const clients = document.querySelectorAll(".client");
-
           clients.forEach((client) => {
             client.addEventListener("mouseenter", () => {
               cursor.classList.remove(
@@ -319,19 +336,19 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   };
 
-  const onResize = () => {
-    window.scrollTo(0, 0);
-    ScrollTrigger.refresh();
-    initializeCursor();
-    initializeScrollTriggers();
-    initializeInteractiveElements();
-  };
-
-  initializeCursor();
+  // Initialization
+  initializeCursorAnimation();
   initializeScrollTriggers();
-  animateSections();
+  initializeSectionsAnimations();
   initializeInteractiveElements();
   ScrollTrigger.refresh();
 
+  // Handle window resize
+  const onResize = () => {
+    scrollTop();
+    initializeCursorAnimation();
+    initializeScrollTriggers();
+    initializeInteractiveElements();
+  };
   window.addEventListener("resize", debounce(onResize, 100));
 });
