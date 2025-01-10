@@ -573,6 +573,10 @@ video {
   --pink: #f9a8d4;
 }
 
+video {
+  filter: grayscale(0);
+}
+
 .layout {
   width: 100%;
   max-width: 1920px;
@@ -986,6 +990,10 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(15 13 13 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray\/5 {
+  background-color: rgb(107 114 128 / 0.05);
 }
 
 .bg-pink {
