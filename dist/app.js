@@ -349,6 +349,16 @@
       initializeScrollTriggers();
       initializeInteractiveElements();
     };
-    window.addEventListener("resize", debounce(onResize, 100));
+
+    let lastWidth = window.innerWidth;
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        if (window.innerWidth !== lastWidth) {
+          lastWidth = window.innerWidth;
+          onResize();
+        }
+      }, 100)
+    );
   });
 })();
