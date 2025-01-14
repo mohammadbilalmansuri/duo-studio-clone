@@ -16,11 +16,10 @@
     }
 
     // Scroll to the top before unloading the page
-    const scrollTop = () => {
+    window.addEventListener("unload", () => {
       window.scrollTo(0, 0);
       ScrollTrigger.refresh();
-    };
-    window.addEventListener("unload", scrollTop);
+    });
 
     // Cursor setup
     let cursor = document.querySelector("#cursor");
