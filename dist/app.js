@@ -344,21 +344,10 @@
 
     // Handle window resize
     const onResize = () => {
-      scrollTop();
       initializeCursorAnimation();
       initializeScrollTriggers();
       initializeInteractiveElements();
     };
-
-    let lastWidth = window.innerWidth;
-    window.addEventListener(
-      "resize",
-      debounce(() => {
-        if (window.innerWidth !== lastWidth) {
-          lastWidth = window.innerWidth;
-          onResize();
-        }
-      }, 100)
-    );
+    window.addEventListener("resize", debounce(onResize, 100));
   });
 })();
