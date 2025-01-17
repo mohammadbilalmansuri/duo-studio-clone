@@ -42,7 +42,7 @@
   }
 
   .client {
-    @apply text-gray flex justify-between items-center md:py-7 py-5 cursor-pointer hover:text-white transition-all duration-200;
+    @apply text-gray flex justify-between items-center md:py-7 py-5 cursor-pointer hover:text-black dark:hover:text-white transition-all duration-200;
   }
 
   .client:nth-child(odd) {

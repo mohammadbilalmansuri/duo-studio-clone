@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,10 +17,12 @@
     />
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body class="w-full relative overflow-x-hidden bg-black text-white">
+  <body
+    class="w-full relative overflow-x-hidden bg-white dark:bg-black text-black dark:text-white"
+  >
     <div
       id="cursor"
-      class="xl:block hidden size-4 rounded-full fixed z-50 bg-pink mix-blend-difference pointer-events-none opacity-0"
+      class="lg:block hidden size-4 rounded-full fixed z-50 bg-pink mix-blend-difference pointer-events-none opacity-0"
     ></div>
 
     <div class="w-full relative flex flex-col items-center overflow-x-hidden">
@@ -197,7 +199,7 @@
           class="layout xl:py-28 py-20 grid sm:grid-cols-3 grid-cols-1 xl:gap-14 gap-10"
         >
           <div
-            class="left-images col-span-1 relative sm:flex justify-end items-center hidden"
+            class="left-images lg:col-span-1 relative lg:flex justify-end items-center hidden"
           >
             <img
               class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none -rotate-6 rounded-xl"
@@ -217,7 +219,7 @@
           </div>
 
           <div
-            class="titles w-full col-span-1 flex flex-col items-center xl:gap-14 gap-10 text-center"
+            class="titles w-full lg:col-span-1 col-span-3 flex flex-col items-center xl:gap-14 gap-10 text-center"
           >
             <h4 class="text-lg font-medium text-center w-52">
               Designed To Bring Out The Truth Of Your Brand
@@ -264,7 +266,7 @@
           </div>
 
           <div
-            class="right-images col-span-1 relative sm:flex justify-start items-center hidden"
+            class="right-images lg:col-span-1 relative lg:flex justify-start items-center hidden"
           >
             <img
               class="3xl:w-[70%] 2xl:w-[80%] xl:w-[90%] lg:w-[80%] w-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 opacity-0 pointer-events-none rotate-6 rounded-xl"
@@ -304,7 +306,7 @@
 
           <div class="clients flex flex-col">
             <div
-              class="group client"
+              class="client"
               data-image="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/duostudio/ds-client1.webp"
             >
               <h4 class="xs:text-lg text-base font-medium">Verizon</h4>
@@ -317,7 +319,7 @@
             </div>
 
             <div
-              class="group client"
+              class="client"
               data-image="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/duostudio/ds-sec4-2.webp"
             >
               <h4 class="xs:text-lg text-base font-medium">Awwwards</h4>
@@ -329,7 +331,7 @@
               </p>
             </div>
             <div
-              class="group client"
+              class="client"
               data-image="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/duostudio/ds-client1.webp"
             >
               <h4 class="xs:text-lg text-base font-medium">Verizon</h4>
