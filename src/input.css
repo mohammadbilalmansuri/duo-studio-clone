@@ -20,6 +20,7 @@
 }
 
 @tailwind components;
+
 @layer components {
   .layout {
     @apply w-full max-w-[1920px] xl:px-20 md:px-10 px-5;
