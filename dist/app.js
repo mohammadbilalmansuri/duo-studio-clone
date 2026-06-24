@@ -15,7 +15,7 @@
     element,
     maxDistance = 100,
     duration = 0.75,
-    easing = "power2.out"
+    easing = "power2.out",
   ) => {
     element.addEventListener("mousemove", (e) => {
       const bounds = element.getBoundingClientRect();
@@ -109,12 +109,12 @@
         leftImages[index].classList.remove(
           "opacity-0",
           "pointer-events-none",
-          "-rotate-6"
+          "-rotate-6",
         );
         rightImages[index].classList.remove(
           "opacity-0",
           "pointer-events-none",
-          "rotate-6"
+          "rotate-6",
         );
       };
 
@@ -122,12 +122,12 @@
         leftImages[index].classList.add(
           "opacity-0",
           "pointer-events-none",
-          "-rotate-6"
+          "-rotate-6",
         );
         rightImages[index].classList.add(
           "opacity-0",
           "pointer-events-none",
-          "rotate-6"
+          "rotate-6",
         );
       };
 
@@ -146,17 +146,17 @@
         cursor.classList.remove(
           "size-4",
           "rounded-full",
-          "mix-blend-difference"
+          "mix-blend-difference",
         );
         cursor.classList.add(
           "w-96",
           "h-64",
           "rounded-xl",
           "object-cover",
-          "object-center"
+          "object-center",
         );
         cursor.style.backgroundImage = `url(${client.getAttribute(
-          "data-image"
+          "data-image",
         )})`;
       };
 
@@ -167,7 +167,7 @@
           "h-64",
           "rounded-xl",
           "object-cover",
-          "object-center"
+          "object-center",
         );
         cursor.classList.add("size-4", "rounded-full", "mix-blend-difference");
       };
